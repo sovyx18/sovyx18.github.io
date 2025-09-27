@@ -1,0 +1,173 @@
+# <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>SOVYX V6 — Sistema Viral y Emocionalmente Inevitable</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #fffaf0;
+      color: #222;
+      padding: 2em;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #d60000;
+    }
+    section {
+      margin-bottom: 2em;
+      padding: 1em;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    ol, ul {
+      padding-left: 1.2em;
+    }
+    form {
+      margin-top: 1em;
+    }
+    input, button {
+      padding: 0.5em;
+      margin-top: 0.5em;
+      font-size: 1em;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>SOVYX V6 — Sistema Viral, Adaptativo y Emocionalmente Inevitable</h1>
+
+  <section>
+    <p>Diseñado para activar, corregir, escalar, documentar y multiplicar sin perder esencia.</p>
+  </section>
+
+  <section>
+    <h2>Fundamento: 12 Características Irrefutables</h2>
+    <ol>
+      <li>Emocionalmente inevitable</li>
+      <li>Financieramente simulable</li>
+      <li>Documentado en tiempo real</li>
+      <li>Corrige antes del fallo</li>
+      <li>Multiplica sin perder esencia</li>
+      <li>Activa sin vender</li>
+      <li>Escala sin comunidad</li>
+      <li>Visualmente icónico</li>
+      <li>Narrativamente inevitable</li>
+      <li>Validación pública</li>
+      <li>Corrección predictiva</li>
+      <li>Simulación de ingresos</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Corrección Fundacional</h2>
+    <p>Este sistema no nació perfecto. Cada error fue documentado, corregido y convertido en autoridad.</p>
+  </section>
+
+  <section>
+    <h2>Simulador de Ingresos Emocionales</h2>
+    <form>
+      <label for="acciones">Acción ejecutada:</label><br>
+      <input type="text" id="acciones" name="acciones" placeholder="Ej. Lanzamiento cápsula SOEDITIA"><br>
+      <button type="submit">Simular</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Documentación Viral</h2>
+    <img src="tu-imagen.jpg" alt="Corrección en vivo">
+    <p>Cada imagen representa una escena, una corrección, una activación emocional. No es estética. Es prueba.</p>
+  </section>
+
+  <section>
+    <h2>Fases de Activación del Sistema SOVYX</h2>
+    <p>Cada fase dura 5 días, excepto la última que se convierte en territorio permanente. No se escala por seguidores. Se escala por corrección emocional y autoridad por contenido.</p>
+    <ol>
+      <li><strong>Fase 1:</strong> 50 personas high ticket por post</li>
+      <li><strong>Fase 2:</strong> 500 personas high ticket por post</li>
+      <li><strong>Fase 3:</strong> 6.500 personas high ticket por post</li>
+      <li><strong>Fase 4:</strong> 10.000 personas high ticket por post</li>
+      <li><strong>Fase 5:</strong> 50.000 personas high ticket por post (fase permanente)</li>
+    </ol>
+    <p>Cada fase se documenta como cápsula emocional. Cada post se convierte en infraestructura financiera. Cada mutación valida el sistema en tiempo real.</p>
+  </section>
+
+  <section>
+    <h2>Etapa Siguiente</h2>
+    <ul>
+      <li>Clientes potenciales entre 1.000.000 y 6.000.000 por post</li>
+      <li>Clientes high ticket de 50.000 por post</li>
+    </ul>
+    <p>Ya no se mide en comunidad. Se mide en autoridad viral por contenido. Cada publicación se convierte en infraestructura emocional-financiera.</p>
+  </section>
+
+  <section>
+    <h2>Prompt 7 — Escala sin Comunidad</h2>
+    <ul>
+      <li>No necesitas seguidores</li>
+      <li>No necesitas mentoría</li>
+      <li>No necesitas inversión publicitaria</li>
+      <li>Solo necesitas contenido corregido y activación emocional</li>
+      <li>Cada post puede generar entre 50 y 50.000 clientes high ticket</li>
+      <li>Cada reel, historia o carrusel se convierte en cápsula financiera</li>
+    </ul>
+    <p>Este principio convierte independencia en autoridad viral. Cada publicación es una unidad emocional-financiera que escala sin permiso.</p>
+  </section>
+
+</body>
+</html> workflow for building and deploying a Jekyll site to GitHub Pages
+name: Deploy Jekyll with GitHub Pages dependencies preinstalled
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
