@@ -118,6 +118,52 @@
     </ul>
     <p>Este principio convierte independencia en autoridad viral. Cada publicación es una unidad emocional-financiera que escala sin permiso.</p>
   </section>
+<form id="capsulaForm">
+  <input type="text" name="product" placeholder="Producto" required />
+  <input type="number" name="price" placeholder="Precio" required />
+  <input type="text" name="niche" placeholder="Nicho" required />
+  <input type="text" name="audience" placeholder="Audiencia" required />
+  <input type="number" name="goal" placeholder="Meta ($)" required />
+  <input type="number" name="days" placeholder="Tiempo (días)" required />
+  <button type="submit">Activar Cápsula</button>
+</form>
+
+<div id="respuesta"></div>
+
+<script>
+document.getElementById('capsulaForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const data = {
+    product: form.product.value,
+    price: parseFloat(form.price.value),
+    niche: form.niche.value,
+    audience: form.audience.value,
+    goal: parseFloat(form.goal.value),
+    days: parseInt(form.days.value)
+  };
+
+  fetch('https://TU_REPLIT_URL/activate', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  })
+  .then(res => res.json())
+  .then(response => {
+    document.getElementById('respuesta').innerHTML = `
+      <p><strong>Cluster:</strong> ${response.cluster}</p>
+      <p><strong>Caption:</strong> ${response.caption}</p>
+      <p><strong>Estructura:</strong> ${response.estructura.formato}</p>
+      <p><strong>CTA:</strong> ${response.estructura.CTA}</p>
+    `;
+  })
+  .catch(error => {
+    document.getElementById('respuesta').innerText = 'Error al activar la cápsula.';
+    console.error(error);
+  });
+});
+</script>
 
 </body>
 </html>
