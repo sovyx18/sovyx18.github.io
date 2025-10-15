@@ -144,7 +144,7 @@ document.getElementById('capsulaForm').addEventListener('submit', function(e) {
     days: parseInt(form.days.value)
   };
 
-  fetch('https://SOVYX-PREDICTIVA--sophie10fra.repl.co/activate', {
+  fetch( ‘https://sovyx-predictiva-sophie10fra.replit.app/activate', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
