@@ -41,12 +41,12 @@
 </head>
 <body>
 
-  <!-- 🖼️ Logo + Branding -->
+  <!-- Logo + Branding -->
   <img id="logo" src="logo-sovyx.png" alt="Logo SOVYX" />
 
   <h1>SOVYX</h1>
 
-  <!-- 🔓 Registro inicial -->
+  <!-- Registro inicial -->
   <section id="registro">
     <h2>Acceso simbólico</h2>
     <form id="registroForm">
@@ -56,7 +56,18 @@
     </form>
   </section>
 
-  <!-- 🧬 Formulario predictivo -->
+<section id="alcance">
+  <h2>Alcance Estratégico por Publicación</h2>
+  <ul>
+    <li><strong>Alcance definido:</strong> 50.000 personas high ticket</li>
+    <li><strong>Cierre simbólico:</strong> 1% = 500 clientes</li>
+    <li><strong>Rango por cliente:</strong> €1.000 a €10.000+</li>
+    <li><strong>Ingresos estimados:</strong> €500.000 a €5.000.000 por post</li>
+  </ul>
+  <p><em>Este es un ejemplo si cierras el 1% del alcance por cada reel/post/carrusel que se publique.</em></p>
+</section>
+
+  <!-- Formulario predictivo -->
   <section id="formulario">
     <h2>Análisis, Corrección y Simulación</h2>
     <p><em>Este es un ejemplo si cierras el 1% del alcance por cada reel/post/carrusel que se publique.</em></p>
@@ -71,15 +82,15 @@
     </form>
   </section>
 
-  <!-- 🧩 Corrección predictiva -->
+  <!-- Corrección predictiva -->
   <section id="respuesta"></section>
 
-  <!-- 🧠 Fundamentos ocultos para el sistema -->
+  <!-- Fundamentos ocultos para el sistema -->
   <div class="oculto" id="fundamentos">
     Emocionalmente inevitable, Financieramente simulable, Documentado en tiempo real, Corrige antes del fallo, Multiplica sin perder esencia, Activa sin vender, Escala sin comunidad, Visualmente icónico, Narrativamente inevitable, Validación pública, Corrección predictiva, Simulación de ingresos.
   </div>
 
-  <!-- 🔮 Script de detección + POST a Replit -->
+  <!-- Script de detección + POST a Replit -->
   <script>
     // Detección de usuario
     if (localStorage.getItem('sovyx_user')) {
