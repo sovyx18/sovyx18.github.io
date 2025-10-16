@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>SOVYX V6 — Sistema Viral y Emocionalmente Inevitable</title>
+  <title>SOVYX</title>
   <style>
     body {
       font-family: 'Helvetica Neue', sans-serif;
@@ -21,149 +21,117 @@
       border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
-    ol, ul {
-      padding-left: 1.2em;
-    }
-    form {
-      margin-top: 1em;
-    }
     input, button {
       padding: 0.5em;
       margin-top: 0.5em;
       font-size: 1em;
+      width: 100%;
     }
-    img {
-      max-width: 100%;
-      border-radius: 12px;
+    #capsulaForm, #respuesta {
+      display: none;
+    }
+    #logo {
+      width: 120px;
+      margin-bottom: 1em;
+    }
+    .oculto {
+      display: none;
     }
   </style>
 </head>
 <body>
 
-  <h1>SOVYX V6 — Sistema Viral, Adaptativo y Emocionalmente Inevitable</h1>
+  <!-- 🖼️ Logo + Branding -->
+  <img id="logo" src="logo-sovyx.png" alt="Logo SOVYX" />
 
-  <section>
-    <p>Diseñado para activar, corregir, escalar, documentar y multiplicar sin perder esencia.</p>
-  </section>
+  <h1>SOVYX</h1>
 
-  <section>
-    <h2>Fundamento: 12 Características Irrefutables</h2>
-    <ol>
-      <li>Emocionalmente inevitable</li>
-      <li>Financieramente simulable</li>
-      <li>Documentado en tiempo real</li>
-      <li>Corrige antes del fallo</li>
-      <li>Multiplica sin perder esencia</li>
-      <li>Activa sin vender</li>
-      <li>Escala sin comunidad</li>
-      <li>Visualmente icónico</li>
-      <li>Narrativamente inevitable</li>
-      <li>Validación pública</li>
-      <li>Corrección predictiva</li>
-      <li>Simulación de ingresos</li>
-    </ol>
-  </section>
-
-  <section>
-    <h2>Corrección Fundacional</h2>
-    <p>Este sistema no nació perfecto. Cada error fue documentado, corregido y convertido en autoridad.</p>
-  </section>
-
-  <section>
-    <h2>Simulador de Ingresos Emocionales</h2>
-    <form>
-      <label for="acciones">Acción ejecutada:</label><br>
-      <input type="text" id="acciones" name="acciones" placeholder="Ej. Lanzamiento cápsula SOEDITIA"><br>
-      <button type="submit">Simular</button>
+  <!-- 🔓 Registro inicial -->
+  <section id="registro">
+    <h2>Acceso simbólico</h2>
+    <form id="registroForm">
+      <input type="text" name="usuario" placeholder="Tu nombre o alias" required />
+      <input type="email" name="correo" placeholder="Correo electrónico" required />
+      <button type="submit">Activar</button>
     </form>
   </section>
 
-  <section>
-    <h2>Documentación Viral</h2>
-    <img src="tu-imagen.jpg" alt="Corrección en vivo">
-    <p>Cada imagen representa una escena, una corrección, una activación emocional. No es estética. Es prueba.</p>
+  <!-- 🧬 Formulario predictivo -->
+  <section id="formulario">
+    <h2>Análisis, Corrección y Simulación</h2>
+    <p><em>Este es un ejemplo si cierras el 1% del alcance por cada reel/post/carrusel que se publique.</em></p>
+    <form id="capsulaForm">
+      <input type="text" name="product" placeholder="Producto" required />
+      <input type="number" name="price" placeholder="Precio" required />
+      <input type="text" name="niche" placeholder="Nicho" required />
+      <input type="text" name="audience" placeholder="Audiencia" required />
+      <input type="number" name="goal" placeholder="Meta ($)" required />
+      <input type="number" name="days" placeholder="Tiempo (días)" required />
+      <button type="submit">Activar</button>
+    </form>
   </section>
 
-  <section>
-    <h2>Fases de Activación del Sistema SOVYX</h2>
-    <p>Cada fase dura 5 días, excepto la última que se convierte en territorio permanente. No se escala por seguidores. Se escala por corrección emocional y autoridad por contenido.</p>
-    <ol>
-      <li><strong>Fase 1:</strong> 50 personas high ticket por post</li>
-      <li><strong>Fase 2:</strong> 500 personas high ticket por post</li>
-      <li><strong>Fase 3:</strong> 6.500 personas high ticket por post</li>
-      <li><strong>Fase 4:</strong> 10.000 personas high ticket por post</li>
-      <li><strong>Fase 5:</strong> 50.000 personas high ticket por post (fase permanente)</li>
-    </ol>
-    <p>Cada fase se documenta como cápsula emocional. Cada post se convierte en infraestructura financiera. Cada mutación valida el sistema en tiempo real.</p>
-  </section>
+  <!-- 🧩 Corrección predictiva -->
+  <section id="respuesta"></section>
 
-  <section>
-    <h2>Etapa Siguiente</h2>
-    <ul>
-      <li>Clientes potenciales entre 1.000.000 y 6.000.000 por post</li>
-      <li>Clientes high ticket de 50.000 por post</li>
-    </ul>
-    <p>Ya no se mide en comunidad. Se mide en autoridad viral por contenido. Cada publicación se convierte en infraestructura emocional-financiera.</p>
-  </section>
+  <!-- 🧠 Fundamentos ocultos para el sistema -->
+  <div class="oculto" id="fundamentos">
+    Emocionalmente inevitable, Financieramente simulable, Documentado en tiempo real, Corrige antes del fallo, Multiplica sin perder esencia, Activa sin vender, Escala sin comunidad, Visualmente icónico, Narrativamente inevitable, Validación pública, Corrección predictiva, Simulación de ingresos.
+  </div>
 
-  <section>
-    <h2>Prompt 7 — Escala sin Comunidad</h2>
-    <ul>
-      <li>No necesitas seguidores</li>
-      <li>No necesitas mentoría</li>
-      <li>No necesitas inversión publicitaria</li>
-      <li>Solo necesitas contenido corregido y activación emocional</li>
-      <li>Cada post puede generar entre 50 y 50.000 clientes high ticket</li>
-      <li>Cada reel, historia o carrusel se convierte en cápsula financiera</li>
-    </ul>
-    <p>Este principio convierte independencia en autoridad viral. Cada publicación es una unidad emocional-financiera que escala sin permiso.</p>
-  </section>
-<form id="capsulaForm">
-  <input type="text" name="product" placeholder="Producto" required />
-  <input type="number" name="price" placeholder="Precio" required />
-  <input type="text" name="niche" placeholder="Nicho" required />
-  <input type="text" name="audience" placeholder="Audiencia" required />
-  <input type="number" name="goal" placeholder="Meta ($)" required />
-  <input type="number" name="days" placeholder="Tiempo (días)" required />
-  <button type="submit">Activar Cápsula</button>
-</form>
+  <!-- 🔮 Script de detección + POST a Replit -->
+  <script>
+    // Detección de usuario
+    if (localStorage.getItem('sovyx_user')) {
+      document.getElementById('registro').style.display = 'none';
+      document.getElementById('formulario').style.display = 'block';
+      document.getElementById('capsulaForm').style.display = 'block';
+    }
 
-<div id="respuesta"></div>
+    // Registro
+    document.getElementById('registroForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      localStorage.setItem('sovyx_user', 'true');
+      document.getElementById('registro').style.display = 'none';
+      document.getElementById('formulario').style.display = 'block';
+      document.getElementById('capsulaForm').style.display = 'block';
+    });
 
-<script>
-document.getElementById('capsulaForm').addEventListener('submit', function(e) {
-  e.preventDefault();
+    // Activación cápsula
+    document.getElementById('capsulaForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = {
+        product: form.product.value,
+        price: parseFloat(form.price.value),
+        niche: form.niche.value,
+        audience: form.audience.value,
+        goal: parseFloat(form.goal.value),
+        days: parseInt(form.days.value)
+      };
 
-  const form = e.target;
-  const data = {
-    product: form.product.value,
-    price: parseFloat(form.price.value),
-    niche: form.niche.value,
-    audience: form.audience.value,
-    goal: parseFloat(form.goal.value),
-    days: parseInt(form.days.value)
-  };
-
-  fetch( ‘https://sovyx-predictiva-sophie10fra.replit.app/activate', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
-  })
-  .then(res => res.json())
-  .then(response => {
-    document.getElementById('respuesta').innerHTML = `
-      <p><strong>Cluster:</strong> ${response.cluster}</p>
-      <p><strong>Caption:</strong> ${response.caption}</p>
-      <p><strong>Estructura:</strong> ${response.estructura.formato}</p>
-      <p><strong>CTA:</strong> ${response.estructura.CTA}</p>
-    `;
-  })
-  .catch(error => {
-    document.getElementById('respuesta').innerText = 'Error al activar la cápsula.';
-    console.error(error);
-  });
-});
-</script>
+      fetch('https://sovyx-predictiva-sophie10fra.replit.app/activate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .then(res => res.json())
+      .then(response => {
+        document.getElementById('respuesta').style.display = 'block';
+        document.getElementById('respuesta').innerHTML = `
+          <h2>Corrección Predictiva</h2>
+          <p><strong>Cluster:</strong> ${response.cluster}</p>
+          <p><strong>Caption:</strong> ${response.caption}</p>
+          <p><strong>Formato:</strong> ${response.estructura.formato}</p>
+          <p><strong>CTA:</strong> ${response.estructura.CTA}</p>
+        `;
+      })
+      .catch(error => {
+        document.getElementById('respuesta').innerText = 'Error al activar la cápsula.';
+        console.error(error);
+      });
+    });
+  </script>
 
 </body>
 </html>
