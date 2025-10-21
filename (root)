@@ -90,59 +90,83 @@
     Emocionalmente inevitable, Financieramente simulable, Documentado en tiempo real, Corrige antes del fallo, Multiplica sin perder esencia, Activa sin vender, Escala sin comunidad, Visualmente icónico, Narrativamente inevitable, Validación pública, Corrección predictiva, Simulación de ingresos.
   </div>
 
-  <!-- Script de detección + POST a Replit -->
-  <script>
-    // Detección de usuario
-    if (localStorage.getItem('sovyx_user')) {
-      document.getElementById('registro').style.display = 'none';
-      document.getElementById('formulario').style.display = 'block';
-      document.getElementById('capsulaForm').style.display = 'block';
+
+<script>
+  // Detección de usuario
+  if (localStorage.getItem('sovyx_user')) {
+    document.getElementById('registro').style.display = 'none';
+    document.getElementById('formulario').style.display = 'block';
+    document.getElementById('capsulaForm').style.display = 'block';
+  }
+
+  // Registro
+  document.getElementById('registroForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    localStorage.setItem('sovyx_user', 'true');
+    document.getElementById('registro').style.display = 'none';
+    document.getElementById('formulario').style.display = 'block';
+    document.getElementById('capsulaForm').style.display = 'block';
+  });
+
+  // Activación cápsula
+  document.getElementById('capsulaForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = {
+      product: form.product.value,
+      price: parseFloat(form.price.value),
+      niche: form.niche.value,
+      audience: form.audience.value,
+      goal: parseFloat(form.goal.value),
+      days: parseInt(form.days.value)
+    };
+
+    //  Validación simbólica
+    if (data.price < 1000) {
+      alert("Tu producto está por debajo del rango high ticket (€1.000+). ¿Quieres activar una cápsula de corrección para escalar tu oferta?");
+      return;
     }
 
-    // Registro
-    document.getElementById('registroForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      localStorage.setItem('sovyx_user', 'true');
-      document.getElementById('registro').style.display = 'none';
-      document.getElementById('formulario').style.display = 'block';
-      document.getElementById('capsulaForm').style.display = 'block';
-    });
+    //  Simulación predictiva
+    const cierreNecesario = Math.ceil(data.goal / data.price);
+    const cierrePorDia = Math.ceil(cierreNecesario / data.days);
 
-    // Activación cápsula
-    document.getElementById('capsulaForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const data = {
-        product: form.product.value,
-        price: parseFloat(form.price.value),
-        niche: form.niche.value,
-        audience: form.audience.value,
-        goal: parseFloat(form.goal.value),
-        days: parseInt(form.days.value)
-      };
+    fetch('https://sovyx-predictiva-sophie10fra.replit.app/activate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(response => {
+      //  Corrección editorial por nicho
+      const niche = data.niche.toLowerCase();
+      if (niche.includes("odontología")) {
+        response.caption = "¿Tus pacientes no confían en tu marca? Este reel corrige eso.";
+      }
+      if (niche.includes("fitness")) {
+        response.caption = "¿Tu comunidad no paga lo que vale tu transformación? Este carrusel lo corrige.";
+      }
+      if (niche.includes("tech") || niche.includes("tecnología")) {
+        response.caption = "¿Tu software no cierra clientes high ticket? Este post activa autoridad editorial.";
+      }
 
-      fetch('https://sovyx-predictiva-sophie10fra.replit.app/activate', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      })
-      .then(res => res.json())
-      .then(response => {
-        document.getElementById('respuesta').style.display = 'block';
-        document.getElementById('respuesta').innerHTML = `
-          <h2>Corrección Predictiva</h2>
-          <p><strong>Cluster:</strong> ${response.cluster}</p>
-          <p><strong>Caption:</strong> ${response.caption}</p>
-          <p><strong>Formato:</strong> ${response.estructura.formato}</p>
-          <p><strong>CTA:</strong> ${response.estructura.CTA}</p>
-        `;
-      })
-      .catch(error => {
-        document.getElementById('respuesta').innerText = 'Error al activar la cápsula.';
-        console.error(error);
-      });
+      document.getElementById('respuesta').style.display = 'block';
+      document.getElementById('respuesta').innerHTML = `
+        <h2>Corrección Predictiva</h2>
+        <p><strong>Cluster:</strong> ${response.cluster}</p>
+        <p><strong>Caption:</strong> ${response.caption}</p>
+        <p><strong>Formato:</strong> ${response.estructura.formato}</p>
+        <p><strong>CTA:</strong> ${response.estructura.CTA}</p>
+        <p><strong>Cierre necesario:</strong> ${cierreNecesario} clientes</p>
+        <p><strong>Cierre diario estimado:</strong> ${cierrePorDia} clientes/día</p>
+      `;
+    })
+    .catch(error => {
+      document.getElementById('respuesta').innerText = 'Error al activar la cápsula.';
+      console.error(error);
     });
-  </script>
+  });
+</script>
 
 </body>
 </html>
