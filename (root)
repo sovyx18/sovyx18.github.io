@@ -53,6 +53,7 @@
       <input type="text" name="usuario" placeholder="Tu nombre o alias" required />
       <input type="email" name="correo" placeholder="Correo electrónico" required />
       <button type="submit">Activar</button>
+<a href="https://www.facebook.com/v18.0/dialog/oauth?client_id=TU_APP_ID&redirect_uri=TU_REDIRECT_URI&scope=instagram_basic,instagram_manage_insights,pages_read_engagement">Activar cápsula editorial</a>
     </form>
   </section>
 
